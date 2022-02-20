@@ -38,7 +38,7 @@ saltar();
 
 // Para funciones anónimas (forma moderna)
 
-const correr = (personaje) => console.log(personaje + "corre"); // La variable correr funciona como si una función se tratase.
+const correr = (personaje) => console.log(personaje + " corre"); // La variable correr funciona como si una función se tratase.
 correr(personaje);
 
 // Arreglos
