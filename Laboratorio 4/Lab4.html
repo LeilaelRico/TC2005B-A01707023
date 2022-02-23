@@ -7,22 +7,55 @@
 </head>
 
 <body style="font-family: Helvetica;">
-    <h1>Lorem Ipsum</h1>
-    <p>
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
-        Duis sodales odio id elit semper, ut maximus ligula condimentum. Vestibulum molestie neque in imperdiet tempus. 
-        Morbi convallis malesuada dolor eu mollis. Duis non sollicitudin nisi, id eleifend nisl. 
-        Pellentesque dapibus fringilla tincidunt. Sed in dui vel lorem fringilla porttitor. 
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec sit amet tristique tellus. 
-        Aliquam cursus ex quis tortor pellentesque, id molestie lacus malesuada. 
-        Pellentesque quis finibus metus. Nulla ut erat ut mauris aliquet elementum. 
-        Quisque sed libero sit amet metus tincidunt interdum vel ac velit. 
-        Maecenas facilisis ante at felis egestas, eu varius quam ultrices.
-    </p>
-
-
+    <h1>Preguntas de Laboratorio</h1>
     
-    <p id="ej3"></p>
+    <div>
+
+        <h2>¿Qué diferencias y semejanzas hay entre Java y JavaScript?</h2>
+        En base a <a href="https://isdicoders.com/es/blog/es-lo-mismo-java-que-javascript_19381">ISDI Coders</a>, una de las principales 
+        diferencias entre estos dos lenguajes es que "Java crea aplicaciones que tras ser compiladas (traducidas a código ejecutable) se pueden ejecutar en navegadores 
+        a través de una máquina virtual, mientras que Javascript se ejecuta nativamente en los navegadores sin necesidad de ninguna máquina virtual."
+
+        <h2>¿Qué métodos tiene el objeto Date? (Menciona al menos 5*)</h2>
+        <ul>
+            <li>Date.now(): Devuelve el valor numérico correspondiente a la hora actual.</li>
+            <li>Date.parse(): Transforma una cadena que representa una fecha, y devuelve el número de milisegundos desde el 1 de enero de 1970, hora local 00:00:00.</li>
+            <li>Date.UTC(): Acepta los mismos parámetros que la forma más larga del constructor, y devuelve el número de milisegundos en un objeto Date desde el 1 de enero de 1970, hora universal 00:00:00.</li>
+            <li>Date.prototype.getFullYear(): Devuelve el año de la fecha indicada acorde a la hora local.</li>
+            <li>Date.prototype.setFullYear(): Fija el año completo para una fecha específica de acuerdo a la zona horaria local. Devuelve un nuevo valor de tipo timestamp.</li>
+        </ul>
+        <strong>Fuente: <a href="https://developer.mozilla.org/es/docs/Web/JavaScript/Reference/Global_Objects/Date">Developer Mozilla.</a></strong>
+
+        <h2>¿Qué métodos tienen los arreglos? (Menciona al menos 5*)</h2>
+        <ul>
+            <li>Array(): Crea un nuevo objeto Array.</li>
+            <li>get Array[@@species]: La función del constructor se utiliza para crear objetos derivados.</li>
+            <li>Array.from(): Crea una nueva instancia de Array a partir de similarAUnArray, un objeto iterable o parecido a un array.</li>
+            <li>Array.isArray(): Devuelve true si valor es un array, y false en caso contrario.</li>
+            <li>Array.of(): Crea una nueva instancia de Array con un número variable de parámetros, independientemente del número y del tipo de dichos parámetros.</li>
+            <li>Array.prototype.fill(): Asigna un valor estático a todos los elementos del array entre las posiciones inicio y fin.</li>
+            <li>Array.prototype.pop(): Elimina el último elemento de un array, y devuelve dicho elemento.</li>
+        </ul>
+        <strong>Fuente: <a href=https://developer.mozilla.org/es/docs/Web/JavaScript/Reference/Global_Objects/Array">Developer Mozilla.</a></strong>
+
+        <h2>¿Cómo se declara una variable con alcance local dentro de una función?</h2>
+        Se utiliza "Let".
+
+        <h2>¿Qué implicaciones tiene utilizar variables globales dentro de funciones?</h2>
+        Princpalmente hace que un programa solamente funcione de una manera determinada.
+
+    </div>
+
+    <div>
+
+        <h1>Ejercicio 6</h1>
+        Se trata de un conjunto de funciones que transforman el tiempo dado en segundos (primer función) en horas, minutos y segundos o 
+        transformar los minutos dados (segunda función) en el mismo formato.
+
+
+    </div>
+
+    <h1>Respuesta a Ejercicios de Javascript</h1>
 
     <script src="js.js"></script>
 
