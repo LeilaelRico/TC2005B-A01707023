@@ -1,0 +1,27 @@
+body {
+    margin: 0 auto;
+    max-width: 50em;
+    margin-top: 1em;
+    font-family: "Roboto", Helvetica, sans-serif;
+    background-color: rgb(253, 250, 243);
+    line-height: 1.5;
+    padding: 1em 1em;
+  }
+
+  h1.titulo {
+      text-align: center;
+  }
+
+  div.ejercicios {
+
+    text-align:justify;  
+    text-justify:auto;
+
+  }
+
+  div.pss {
+
+    margin-top: 0.5em;
+    padding-top: 0.5em;
+
+  }
