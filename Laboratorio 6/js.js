@@ -9,7 +9,7 @@ let contraInicial = document.getElementById("contraI");
 let contraComprueba = document.getElementById("contraC");
 let button = document.getElementById("confirma");
 
-button.onclick = function(){
+button.onclick = function() {
 
     if(contraI.value == contraC.value){
 
@@ -24,3 +24,15 @@ button.onclick = function(){
 
 /* Ejercicio 2 */
 
+let butmas = document.getElementById("mas");
+let butmen = document.getElementById("menos");
+
+let cantidadPS5 = 0;
+let cantidadSX = 0;
+let cantidadOLED = 0;
+
+function suma() {
+
+    document.write(cantidadPS5);
+
+}

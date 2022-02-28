@@ -25,3 +25,15 @@ body {
     padding-top: 0.5em;
 
   }
+
+  img {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 25%;
+    border-radius: 8px;
+  }
+
+  h2,h3,h4 {
+    text-align: center;
+}
