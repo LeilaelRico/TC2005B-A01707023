@@ -3,4 +3,4 @@
 ## Elaborado por
 
 * Olivia Araceli Morales Quezada.
-* Criistian Leilael Rico Espinosa.
+* Cristian Leilael Rico Espinosa.
