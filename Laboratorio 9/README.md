@@ -1,6 +1,6 @@
 # Laboratorio 9
 
-## Elaborado por:
+## Elaborado por
 
 * Olivia Araceli Morales Quezada.
-* Criuistian Leilael Rico Espinosa.
+* Criistian Leilael Rico Espinosa.
