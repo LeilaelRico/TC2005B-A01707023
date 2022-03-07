@@ -5,7 +5,7 @@ A01707023
 
 const filesystem = require('fs');
 
-/*Aqui*/
+const comida = ["Pizza", "Taco", "Hamburguesa", "Lasagna"];
 
 const http = require('http');
 
@@ -22,12 +22,13 @@ const server = http.createServer( (request, response) => {
         response.write('<div class="text-center"> <a href="/videojuegos"><button>Visitar Sitio</button></a></div><br>')
         response.write('<div class="text-center"><h4>También escucho música</h4></div>');
         response.write('<div class="text-center"> <a href="/musica"><button>Visitar Sitio</button></a></div><br>')
-        response.write('<div class="text-center"><h4>Ejercicio</h4></div>');
+        response.write('<div class="text-center"><h4>Comida y recomendaciones</h4></div>');
         response.write('<div class="text-center"> <a href="/ejercicio"><button>Visitar Sitio</button></a></div><br>')  
         response.write('</body></html>');
         response.end();
 
-    } else if (request.url === '/videojuegos' && request.method === 'GET') {
+    } 
+    else if (request.url === '/videojuegos' && request.method === 'GET') {
         response.setHeader('Content-Type', 'text/html');
         response.write('<!DOCTYPE html><html lang="es-mx"><head><meta charset="utf-8"><title>A01707023_Lab10</title><link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous"></head>');
         response.write('<body>');
@@ -41,7 +42,8 @@ const server = http.createServer( (request, response) => {
         response.end();
 
 
-    }else if (request.url === '/musica' && request.method === 'GET') {
+    }
+    else if (request.url === '/musica' && request.method === 'GET') {
         response.setHeader('Content-Type', 'text/html');
         response.write('<!DOCTYPE html><html lang="es-mx"><head><meta charset="utf-8"><title>A01707023_Lab10</title><link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous"></head>');
         response.write('<body>');
@@ -54,20 +56,60 @@ const server = http.createServer( (request, response) => {
         response.write('</body>');
         response.end();
 
-    }else if (request.url === '/ejercicio' && request.method === 'GET') {
+    }
+    else if (request.url === '/ejercicio' && request.method === 'GET') {
         response.setHeader('Content-Type', 'text/html');
         response.write('<!DOCTYPE html><html lang="es-mx"><head><meta charset="utf-8"><title>A01707023_Lab10</title><link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous"></head>');
         response.write('<body>');
         response.write(`<div class="text-center"><h4>Cristian Leilael Rico Espinosa</h4></div>`);
-        response.write(`<div class="text-center"><h4>Foals</h4></div>`);
-        response.write('<div class="row d-flex justify-content-center"><div class="col-md-6">Foals es una banda originaria de Oxford, Inglaterra. La banda publica con Transgressive Records en Europa y Sub Pop en los EE. UU. Publicaron un álbum completo—titulado Antidotes—el 24 de marzo de 2008 en el Reino Unido, y el 8 de abril en EE. UU. Iba a ser producido originalmente por Dave Sitek de TV on the Radio pero la banda rechazó la mezcla final de Sitek y remezclaron el disco entero ellos mismos debido al excesivo uso del efecto reverb que le daba un sonido espacial.<br>Fuente: https://es.wikipedia.org/wiki/Foals<hr></div></div>');
-        response.write(`<div class="text-center"><h4>Everything Everything</h4></div>`);
-        response.write('<div class="row d-flex justify-content-center"><div class="col-md-6">Everything Everything es un grupo inglés de indie rock, creado a finales de 2007. Sus integrantes son de Newcastle, Kent y Guernsey. La banda saltó a la fama cuando se dieron a conocer en el programa “Sound of 2010”, de la BBC el 7 de diciembre de 2009. Debutaron con el álbum “Man Alive” gracias Geffen Records el 30 de agosto de 2010, donde se colocaron en el número 17 en Reino Unido.<br>Fuente: https://es.wikipedia.org/wiki/Everything_Everything<hr></div></div>');
+        response.write('<div class="list-item text-center">');
+        for (let i in comida) {
+            response.write('<li>' + comida[i] + '</li>');
+        }
+        response.write('</div>');
+        response.write('<form action="/ejercicio" method="POST">');
+        response.write('<div class="text-center"><label for="comida">Recomiéndame alguna comida<br></label>');
+        response.write('<input type="text" name="comida" required>');
+        response.write('<input type="submit" value="Enviar"></div>');
         response.write('<div class="text-center"><a href="/">Regresar al inicio</a></div>');
         response.write('</body>');
         response.end();
 
-    } else {
+    }
+
+     else if (request.url === '/ejercicio' && request.method === 'POST') {
+    const datos = [];
+    request.on('data', (dato) => {
+        console.log(dato);
+        datos.push(dato);
+    });
+    return request.on('end', () => {
+        console.log(datos);
+        const datos_completos = Buffer.concat(datos).toString();
+        console.log(datos_completos);
+        const nuevo_dato = datos_completos.split('=')[1];
+        console.log(nuevo_dato);
+        comida.push(nuevo_dato);
+        console.log(comida);
+        response.setHeader('Content-Type', 'text/html');
+        response.write('<!DOCTYPE html><html lang="es-mx"><head><meta charset="utf-8"><title>A01707023_Lab10</title><link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous"></head>');
+        response.write('<body>');
+        response.write(`<div class="text-center"><h4>Cristian Leilael Rico Espinosa</h4>`);
+        response.write('<h2>Algo de mi comida favorita + sus recomendaciones </h2><br><br>');
+        response.write('<h4>La lista se ha actualizado:</h4></div>');
+        response.write('<div class="list-item text-center">');
+        for (let i in comida) {
+            response.write('<li>' + comida[i] + '</li>');
+        }
+        response.write('</div>');
+        response.write('<div class="text-center"><a href="/ejercicio">Regresa a la lista inicial de comida.</a></div>');
+        response.write('</section></div>');
+        response.write('</body>');
+        return response.end();
+    });
+}
+    
+    else {
         response.statusCode = 404;
         response.setHeader('Content-Type', 'text/html');
         response.write('<!DOCTYPE html><html lang="es-mx"><head><title>A01707023_Lab10 | Page not found</title><meta charset="utf-8"></meta></head>');
