@@ -1,0 +1,27 @@
+{
+  "name": "app.js",
+  "version": "1.0.0",
+  "description": "Laboratorio 11",
+  "main": "app.js",
+  "scripts": {
+    "start": "nodemon app.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/LeilaelRico/TC2005B-A01707023.git"
+  },
+  "author": "Cristian Rico",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/LeilaelRico/TC2005B-A01707023/issues"
+  },
+  "homepage": "https://github.com/LeilaelRico/TC2005B-A01707023#readme",
+  "devDependencies": {
+    "nodemon": "^2.0.15"
+  },
+  "dependencies": {
+    "body-parser": "^1.19.2",
+    "express": "^4.17.3"
+  }
+}
