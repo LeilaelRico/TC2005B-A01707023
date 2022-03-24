@@ -1,0 +1,28 @@
+<%- include('includes/head.ejs') %>
+
+<div class="list-item text-center">
+
+    <% for (let arr of comida) { %>
+
+        <li> <%= arr.nombre %> </li>
+
+    <%}  
+    %>
+</div> 
+
+<form action="/ejercicio" method="POST"> 
+    <div class="text-center">
+        <label for="nombre">
+            Recomiéndame alguna comida
+        </label> 
+
+        <input type="text" name="nombre" required> 
+        <input type="submit" value="Enviar">
+    </div>
+</form>
+
+<div class="text-center">
+    <a href="/">Regresar al inicio</a>
+</div>
+
+    <%- include('includes/foot.ejs') %>
