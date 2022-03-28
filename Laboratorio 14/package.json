@@ -1,0 +1,31 @@
+{
+  "name": "laboratorio-14",
+  "version": "1.0.0",
+  "description": "laboratorio 14",
+  "main": "app.js",
+  "scripts": {
+    "start": "nodemon app.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/LeilaelRico/TC2005B-A01707023.git"
+  },
+  "keywords": [
+    "lab14"
+  ],
+  "author": "Cristian Rico",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/LeilaelRico/TC2005B-A01707023/issues"
+  },
+  "homepage": "https://github.com/LeilaelRico/TC2005B-A01707023#readme",
+  "dependencies": {
+    "body-parser": "^1.19.2",
+    "cookie-parser": "^1.4.6",
+    "ejs": "^3.1.6",
+    "express": "^4.17.3",
+    "express-session": "^1.17.2",
+    "nodemon": "^2.0.15"
+  }
+}
