@@ -25,6 +25,8 @@ app.use(cookieParser());
 const miRuta = require('./routes/lab14.routes');
 app.use('/', miRuta);
 
+const rutas_usuarios = require('./routes/auth.routes');
+app.use('/users', rutas_usuarios);
 
 const Preguntas = require('./routes/explicacion.routes');
 app.use('/expl', Preguntas);
