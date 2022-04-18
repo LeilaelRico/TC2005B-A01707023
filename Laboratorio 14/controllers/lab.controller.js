@@ -2,13 +2,11 @@
 const path = require('path');
 const Recomendacion = require('../models/comida');
 
-const Comidas = require('../models/comida');
 
 exports.listar = (request, response, next) => {
     console.log(request.body);
     console.log(request.get('Cookie').split(':')[1]);
     console.log(request.cookies);
-    //response.render('misgustos',{comida: comida, bandas: bandas, hobbies: hobbies});
     response.render('ejercicio', {comida: Recomendacion.fetchAll(),
         usuario: request.session.usuario});
 };
@@ -30,8 +28,8 @@ exports.musica = (request, response, next) => {
 
 exports.renderejercicio = (request, response, next) => {
     console.log(request.body);
-    response.render('comida', {
-        usuario: request.session.usuario  
+    response.render('ejercicio', {
+        usuario: request.session.usuario, comida: Recomendacion.fetchAll() 
     });
 };
 
